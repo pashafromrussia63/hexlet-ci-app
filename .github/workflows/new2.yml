@@ -1,0 +1,12 @@
+name: New Workflow 2
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - run: npm test
+      - uses: hexlet-components/hello-from-hexlet-action@release
