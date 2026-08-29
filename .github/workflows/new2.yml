@@ -1,13 +1,22 @@
 name: New Workflow 2
-on: push
+on:
+  - push
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [26.x]
+
     steps:
       - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v7
-        with:
-          node-version: '20'
-      - run: npm install --legacy-peer-deps
-      - run: NODE_OPTIONS="--max-old-space-size=4096 --no-warnings" npm test
+          with:
+            node-version: ${{ matrix.node-version }}
+            cache: pnpm
+
+      - run: make setup
+      - run: make test
       - uses: hexlet-components/hello-from-hexlet-action@release
