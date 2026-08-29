@@ -1,3 +1,4 @@
+[![New Workflow](https://github.com/pashafromrussia63/hexlet-ci-app/actions/workflows/new.yml/badge.svg)](https://github.com/pashafromrussia63/hexlet-ci-app/actions/workflows/new.yml)
 # Example app for CI Hexlet course
 
 Starting boilerplate of [Strapi](https://strapi.io/) application
