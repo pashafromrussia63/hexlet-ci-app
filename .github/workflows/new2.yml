@@ -9,5 +9,5 @@ jobs:
         with:
           node-version: '20'
       - run: make install
-      - run: make test
+      - run: NODE_OPTIONS="--max-old-space-size=4096 --no-warnings" pnmp test
       - uses: hexlet-components/hello-from-hexlet-action@release
